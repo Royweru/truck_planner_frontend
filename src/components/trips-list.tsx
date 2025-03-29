@@ -2,6 +2,7 @@
 import { useEffect,useState } from "react";
 import { tripService } from "@/lib/apiServices";
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import TripCard from "./trip-card";
 export const TripsList = () => {
     const [trips, setTrips] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
@@ -60,16 +61,10 @@ export const TripsList = () => {
             <p className="text-gray-400">No trips found</p>
           ) : (
             trips.map((trip:any) => (
-              <div 
-                key={trip.id} 
-                className="flex justify-between items-center p-3 bg-gray-900  text-white rounded-lg mb-2 hover:cursor-pointer"
-
-              >
-                <div>
-                  <p className="font-semibold">{trip.current_location} → {trip.dropoff_location}</p>
-                  
-                </div>
-              </div>
+              <TripCard 
+                key={trip.id}
+                trip={trip}
+              />
             ))
           )}
         </CardContent>

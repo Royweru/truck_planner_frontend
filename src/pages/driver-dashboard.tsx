@@ -15,6 +15,7 @@ import { Button } from '@/components/ui/button';
 import { TripsList } from '@/components/trips-list';
 import TripPlanningForm from '@/components/trip-planning-form';
 import { UserProfile } from '@/components/user-profile';
+import { authService } from '@/lib/apiServices';
 
 
 const Dashboard = () => {
@@ -87,9 +88,12 @@ const Dashboard = () => {
             </button>
           ))}
 
-          <div className="absolute bottom-6 left-0 right-0 px-6">
+          <div className="absolute bottom-6 left-0 right-0 px-6 cursor-pointer">
             <Button
-              onClick={()=>{}}
+              onClick={async()=>{
+                  await authService.logout()
+                  window.location.reload()
+              }}
               variant="destructive"
               className="w-full"
             >
