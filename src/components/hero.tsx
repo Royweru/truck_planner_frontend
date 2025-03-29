@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-
+import truckDriversImage from "/truck-jero.jpg";
 export const Hero = () => {
   const textVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -18,9 +18,9 @@ export const Hero = () => {
 
   return (
     <section
-      className='min-h-screen flex items-center justify-center bg-cover bg-center w-full bg-[url("/truck-hero.jpg")]'
+      className='min-h-screen flex items-center justify-center bg-cover bg-center w-full'
       style={{
-        backgroundImage: `url('/truck-drivers.jpg')`, // Replace with your image path
+        backgroundImage: `url("/truck-hero.jpg")`,
       }}
     >
       <div className="absolute inset-0 bg-black bg-opacity-10"></div>
