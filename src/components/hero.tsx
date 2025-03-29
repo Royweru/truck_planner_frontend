@@ -1,4 +1,4 @@
-import React from "react";
+
 import { motion } from "framer-motion";export const Hero = () => {
   const textVariants = {
     hidden: { opacity: 0, y: 20 },

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React,{useState, }from 'react'
+import {useState, }from 'react'
 import { useNavigate } from 'react-router';
 import { authService } from '@/lib/apiServices';
 import { Lock, User, Mail, Truck } from "lucide-react";
