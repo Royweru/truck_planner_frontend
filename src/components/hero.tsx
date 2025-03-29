@@ -1,30 +1,22 @@
 import React from "react";
-import { motion } from "framer-motion";
-import truckDriversImage from "/truck-jero.jpg";
-export const Hero = () => {
+import { motion } from "framer-motion";export const Hero = () => {
   const textVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 1 } },
-  };
-
-  const buttonVariants = {
+  };  const buttonVariants = {
     hidden: { opacity: 0, scale: 0.8 },
     visible: {
       opacity: 1,
       scale: 1,
       transition: { duration: 0.5, delay: 0.5, type: "spring", stiffness: 120 },
     },
-  };
-
-  return (
+  };  return (
     <section
-      className='min-h-screen flex items-center justify-center bg-cover bg-center w-full'
-      style={{
-        backgroundImage: `url("/truck-hero.jpg")`,
-      }}
+      className='min-h-screen flex items-center justify-center bg-cover bg-center w-full bg-[url("/truck-hero.jpg")]'
+     
     >
-      <div className="absolute inset-0 bg-black bg-opacity-10"></div>
-      <div className="relative z-10 text-center text-white px-6">
+    <div className=' absolute inset-0 bg-black/30'></div> 
+        <div className="relative z-10 text-center text-white px-6">
         <motion.h1
           className="text-5xl md:text-7xl font-serif font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent"
           variants={textVariants}
@@ -55,3 +47,4 @@ export const Hero = () => {
     </section>
   );
 };
+
