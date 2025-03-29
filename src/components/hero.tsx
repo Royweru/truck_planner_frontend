@@ -18,10 +18,12 @@ export const Hero = () => {
 
   return (
     <section
-      className="min-h-screen flex items-center justify-center bg-cover bg-center relative"
-      style={{backgroundImage: `url('/truck_hero.webp')`}}
+      className='min-h-screen flex items-center justify-center bg-cover bg-center w-full bg-[url("/truck-hero.jpg")]'
+      style={{
+        backgroundImage: `url('/truck-drivers.jpg')`, // Replace with your image path
+      }}
     >
-      <div className="absolute inset-0 bg-black bg-opacity-20"></div>
+      <div className="absolute inset-0 bg-black bg-opacity-10"></div>
       <div className="relative z-10 text-center text-white px-6">
         <motion.h1
           className="text-5xl md:text-7xl font-serif font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent"
@@ -41,7 +43,7 @@ export const Hero = () => {
           optimization, and electronic logging compliance.
         </motion.p>
         <motion.a
-          href="#start-planning"
+          href="/driver-dashboard"
           className="inline-block bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:from-blue-600 hover:to-purple-700 transition-all shadow-lg"
           variants={buttonVariants}
           initial="hidden"
