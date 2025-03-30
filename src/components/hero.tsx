@@ -15,7 +15,7 @@ import { motion } from "framer-motion";export const Hero = () => {
       className='min-h-screen flex items-center justify-center bg-cover bg-center w-full bg-[url("/truck-hero.jpg")]'
      
     >
-    <div className=' absolute inset-0 bg-black/30'></div> 
+    <div className=' absolute inset-0 bg-black/40'></div> 
         <div className="relative z-10 text-center text-white px-6">
         <motion.h1
           className="text-5xl md:text-7xl font-serif font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent"
