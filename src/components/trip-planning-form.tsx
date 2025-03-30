@@ -46,7 +46,8 @@ const TripPlanningForm = () => {
   const [routePath, setRoutePath] = useState<any[]>([]);
   const [isModalOpen, setModalOpen] = useState(false);
   const [isLoading, setLoading] = useState(false);
-
+  const google_map_api = import.meta.env.VITE_GOOGLE_MAP_API
+  console.log(google_map_api)
   const handleInputChange = (e: { target: { name: any; value: any } }) => {
     const { name, value } = e.target;
     setTripDetails((prev) => ({
@@ -75,7 +76,7 @@ const TripPlanningForm = () => {
         toast.error("Cycle hours must be between 0 and 14");
         return;
       }
-
+      console.log(tripDetails)
       const result = await tripService.planTrip(tripDetails);
       setTripResult(result);
 
@@ -185,7 +186,9 @@ const TripPlanningForm = () => {
             <Button
               type="submit"
               disabled={isLoading}
-              className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white transition-all duration-300 ease-in-out transform hover:scale-105"
+              className="w-full bg-gradient-to-r from-blue-600
+               to-purple-600 hover:from-blue-700 hover:to-purple-700
+                text-white transition-all duration-300 ease-in-out transform hover:scale-105"
             >
               {isLoading ? "Planning Trip..." : "Plan Trip"}
             </Button>
@@ -215,7 +218,7 @@ const TripPlanningForm = () => {
             <div className="grid md:grid-cols-2 gap-6 p-6">
               {/* Map Section */}
               <div className="rounded-2xl overflow-hidden shadow-lg">
-                <LoadScript googleMapsApiKey="AIzaSyDn8duOeHMr3uVaSX4Qh6LVyiNbB_P8-HA">
+                <LoadScript googleMapsApiKey={google_map_api}>
                   <GoogleMap
                     mapContainerStyle={mapContainerStyle}
                     center={mapCenter}
