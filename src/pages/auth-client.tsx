@@ -3,7 +3,7 @@ import {useState, }from 'react'
 import { useNavigate } from 'react-router';
 import { authService } from '@/lib/apiServices';
 import { Lock, User, Mail, Truck } from "lucide-react";
-import { toast } from "sonner";
+import toast from 'react-hot-toast';
 
 export const AuthClient = () => {
     const [isLogin, setIsLogin] = useState(true);
@@ -35,7 +35,7 @@ export const AuthClient = () => {
             formData.password
           );
           if (res) {
-            alert("You have successfully logged in");
+            toast("You have successfully logged in");
             navigate("/driver-dashboard");
           }
         } else {
@@ -46,7 +46,7 @@ export const AuthClient = () => {
             formData.confirmPassword
           );
           if (res) {
-            alert("You have successfully signed up");
+            toast("You have successfully signed up");
             setIsLogin(true);
           }
         }

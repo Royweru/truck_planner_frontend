@@ -16,6 +16,7 @@ import { TripsList } from '@/components/trips-list';
 import TripPlanningForm from '@/components/trip-planning-form';
 import { UserProfile } from '@/components/user-profile';
 import { authService } from '@/lib/apiServices';
+import toast from 'react-hot-toast';
 
 
 const Dashboard = () => {
@@ -62,7 +63,11 @@ const Dashboard = () => {
         return null;
     }
   };
-
+ const onLogOut= ()=>{
+  authService.logout()
+  window.location.reload()
+  toast("You have been logged out")
+ }
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-blue-900 text-white flex">
       {/* Sidebar for Medium Screens and Above */}
@@ -90,10 +95,7 @@ const Dashboard = () => {
 
           <div className="absolute bottom-6 left-0 right-0 px-6 cursor-pointer">
             <Button
-              onClick={async()=>{
-                  await authService.logout()
-                  window.location.reload()
-              }}
+              onClick={onLogOut}
               variant="destructive"
               className="w-full"
             >
@@ -108,11 +110,11 @@ const Dashboard = () => {
       <div className="md:hidden absolute top-4 left-4 z-50">
         <Sheet>
           <SheetTrigger asChild>
-            <Button variant="outline" size="icon">
-              <MenuIcon className="h-6 w-6" />
+            <Button variant="ghost" size="icon" >
+              <MenuIcon className="h-6 w-6 text-white" />
             </Button>
           </SheetTrigger>
-          <SheetContent side="left" className="bg-gray-800">
+          <SheetContent side="left" className="bg-gray-700">
             <SheetHeader>
               <SheetTitle className="flex items-center">
                 <Truck className="w-8 h-8 text-blue-500 mr-3" />
@@ -125,7 +127,6 @@ const Dashboard = () => {
                   key={item.section}
                   onClick={() => {
                     setActiveSection(item.section);
-                    // Close sheet after selection
                   }}
                   variant="ghost"
                   className="w-full justify-start text-white"
@@ -135,7 +136,7 @@ const Dashboard = () => {
                 </Button>
               ))}
               <Button
-                onClick={()=>{}}
+                onClick={onLogOut}
                 variant="destructive"
                 className="w-full mt-4"
               >

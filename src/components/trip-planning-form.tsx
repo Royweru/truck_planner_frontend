@@ -18,7 +18,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardContent, CardTitle } from "@/components/ui/card";
 import { tripService } from "../lib/apiServices";
-import { toast } from "sonner";
+import toast from "react-hot-toast";
 
 const mapContainerStyle = {
   width: "100%",
@@ -76,7 +76,7 @@ const TripPlanningForm = () => {
         toast.error("Cycle hours must be between 0 and 14");
         return;
       }
-      console.log(tripDetails)
+      
       const result = await tripService.planTrip(tripDetails);
       setTripResult(result);
 
@@ -93,15 +93,11 @@ const TripPlanningForm = () => {
       }
 
       setModalOpen(true);
-      toast.success("Trip Planned Successfully", {
-        description: `Estimated Time: ${result.estimated_time}`,
-      });
+      toast.success(`Trip Planned Successfully, Estimated Time: ${result.estimated_time}`
+      );
     } catch (err) {
-      toast.error("Trip Planning Error", {
-        description:
-          (err as any).response?.data?.detail ||
-          "An error occurred while planning the trip",
-      });
+      console.error(err)
+      toast.error("Trip Planning Error",);
       setTripResult(null);
     } finally {
       setLoading(false);
