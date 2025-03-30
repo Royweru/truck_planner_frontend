@@ -3,7 +3,7 @@ import { ACCESS_TOKEN, REFRESH_TOKEN } from '@/constants';
 import axios from 'axios';
 
 // Base configuration for API calls
-const API_BASE_URL = 'http://localhost:8000/api';
+const API_BASE_URL = 'https://truck-planner-api.onrender.com/api';
 
 // Create axios instance with base configuration
 const apiService = axios.create({
