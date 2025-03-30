@@ -4,13 +4,16 @@ import AuthPage from "./pages/auth";
 import { Toaster } from "react-hot-toast";
 import { ProtectedRoute } from "./protectedRoutes";
 import Dashboard from "./pages/driver-dashboard";
+import AboutPage from "./pages/about";
 
 function App() {
   return (
     <>
       <Router>
         <Routes>
+          {/* publlic route */}
           <Route path="/" element={<LandingPage />} index />
+          <Route path="/about" element={<AboutPage />}  />
           <Route
             path="/auth"
             element={
@@ -26,15 +29,12 @@ function App() {
             <Route
               path="/driver-dashboard"
               element={
-                <div>
-                  <Toaster />
-                  <Dashboard />
-                </div>
+              <Dashboard />
               }
             />
           </Route>
 
-          {/* Not found routes */}
+          {/* Not found  */}
           <Route
             path="*"
             element={

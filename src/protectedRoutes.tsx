@@ -4,6 +4,7 @@ import  { authService } from "./lib/apiServices";
 import { jwtDecode } from "jwt-decode";
  import { useEffect, useState } from 'react'
 import { ACCESS_TOKEN } from "./constants";
+import { Toaster } from "react-hot-toast";
 
 export const ProtectedRoute = () => {
     const [isAuthorized, setIsAuthorized] = useState<null | boolean>(null)
@@ -45,5 +46,10 @@ export const ProtectedRoute = () => {
     
       if(!isAuthorized) return <Navigate to={'/auth'} />
 
-   return <Outlet />
+   return( 
+     <>
+       <Toaster />
+       <Outlet />
+     </>   
+ )
 }
