@@ -30,7 +30,7 @@ export const BlogsSection = () => {
               {/* Blog Post 1 */}
               <div className="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
                 <img
-                  src="/blog1.jpg" // Replace with actual image path
+                  src="/blog1.jpg" 
                   alt="Blog Post 1"
                   className="w-full h-48 object-cover"
                 />
@@ -45,7 +45,7 @@ export const BlogsSection = () => {
               {/* Blog Post 2 */}
               <div className="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
                 <img
-                  src="/blog2.jpg" // Replace with actual image path
+                  src="/blog2.jpg" 
                   alt="Blog Post 2"
                   className="w-full h-48 object-cover"
                 />
@@ -60,7 +60,7 @@ export const BlogsSection = () => {
               {/* Blog Post 3 */}
               <div className="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
                 <img
-                  src="/blog3.jpg" // Replace with actual image path
+                  src="/blog3.jpg" 
                   alt="Blog Post 3"
                   className="w-full h-48 object-cover"
                 />
